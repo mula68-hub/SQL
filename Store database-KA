@@ -1,0 +1,27 @@
+--Create a store dataabse- a table for all the items in my store, and at least 5 columns
+
+Create TABLE inventory (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, color TEXT, price INTEGER); 
+
+--Store sells at least 15 items
+
+INSERT INTO inventory VALUES (1, "Plate", 4, "red", 16);
+INSERT INTO inventory VALUES (2, "bowl", 6, "red", 12);
+INSERT INTO inventory VALUES (3, "Cup", 4, "red", 10);
+INSERT INTO inventory VALUES (4, "Glass", 4, "red", 10);
+INSERT INTO inventory VALUES (5, "Plate", 4, "white", 16);
+INSERT INTO inventory VALUES (6, "bowl", 6, "white", 12);
+INSERT INTO inventory VALUES (7, "Cup", 4, "white", 10);
+INSERT INTO inventory VALUES (8, "Glass", 4, "white", 10);
+INSERT INTO inventory VALUES (9, "Plate", 4, "green", 16);
+INSERT INTO inventory VALUES (10, "bowl", 6, "green", 12);
+INSERT INTO inventory VALUES (11, "Cup", 4, "green", 10);
+INSERT INTO inventory VALUES (12, "Glass", 4, "green", 10);
+INSERT INTO inventory VALUES (13, "Spoon", 6, "gold", 18);
+INSERT INTO inventory VALUES (14, "Fork", 6, "gold", 18);
+INSERT INTO inventory VALUES (15, "Knife", 6, "gold", 18);
+
+--Select statements to order your items by price
+SELECT * FROM inventory WHERE price >= 16 ORDER BY price asc;
+
+--One statistic about the items
+SELECT  name, SUM(quantity) FROM inventory GROUP BY name;
